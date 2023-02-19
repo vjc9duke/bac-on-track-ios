@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6587AD7329A2B61B0064917E /* BAC_on_TrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD7229A2B61B0064917E /* BAC_on_TrackApp.swift */; };
-		6587AD7529A2B61B0064917E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD7429A2B61B0064917E /* ContentView.swift */; };
+		6587AD7529A2B61B0064917E /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD7429A2B61B0064917E /* HomePage.swift */; };
 		6587AD7729A2B61C0064917E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6587AD7629A2B61C0064917E /* Assets.xcassets */; };
 		6587AD7A29A2B61C0064917E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6587AD7929A2B61C0064917E /* Preview Assets.xcassets */; };
 		6587AD8429A2B61D0064917E /* BAC_on_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD8329A2B61D0064917E /* BAC_on_TrackTests.swift */; };
 		6587AD8E29A2B61D0064917E /* BAC_on_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD8D29A2B61D0064917E /* BAC_on_TrackUITests.swift */; };
 		6587AD9029A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD8F29A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift */; };
+		6587AD9E29A2BE110064917E /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD9D29A2BE110064917E /* SettingsPage.swift */; };
+		6587ADA029A2BE180064917E /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD9F29A2BE180064917E /* InfoPage.swift */; };
+		6587ADA229A2BEDB0064917E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587ADA129A2BEDB0064917E /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		6587AD6F29A2B61B0064917E /* BAC on Track.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BAC on Track.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6587AD7229A2B61B0064917E /* BAC_on_TrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_on_TrackApp.swift; sourceTree = "<group>"; };
-		6587AD7429A2B61B0064917E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6587AD7429A2B61B0064917E /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		6587AD7629A2B61C0064917E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6587AD7929A2B61C0064917E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6587AD7F29A2B61D0064917E /* BAC on TrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BAC on TrackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		6587AD8929A2B61D0064917E /* BAC on TrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BAC on TrackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6587AD8D29A2B61D0064917E /* BAC_on_TrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_on_TrackUITests.swift; sourceTree = "<group>"; };
 		6587AD8F29A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_on_TrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6587AD9D29A2BE110064917E /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		6587AD9F29A2BE180064917E /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		6587ADA129A2BEDB0064917E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,11 @@
 		6587AD7129A2B61B0064917E /* BAC on Track */ = {
 			isa = PBXGroup;
 			children = (
+				6587AD9C29A2BDEA0064917E /* Pages */,
 				6587AD7229A2B61B0064917E /* BAC_on_TrackApp.swift */,
-				6587AD7429A2B61B0064917E /* ContentView.swift */,
 				6587AD7629A2B61C0064917E /* Assets.xcassets */,
 				6587AD7829A2B61C0064917E /* Preview Content */,
+				6587ADA129A2BEDB0064917E /* ContentView.swift */,
 			);
 			path = "BAC on Track";
 			sourceTree = "<group>";
@@ -125,6 +132,16 @@
 				6587AD8F29A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift */,
 			);
 			path = "BAC on TrackUITests";
+			sourceTree = "<group>";
+		};
+		6587AD9C29A2BDEA0064917E /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				6587AD7429A2B61B0064917E /* HomePage.swift */,
+				6587AD9D29A2BE110064917E /* SettingsPage.swift */,
+				6587AD9F29A2BE180064917E /* InfoPage.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6587AD7529A2B61B0064917E /* ContentView.swift in Sources */,
+				6587AD9E29A2BE110064917E /* SettingsPage.swift in Sources */,
+				6587ADA229A2BEDB0064917E /* ContentView.swift in Sources */,
+				6587AD7529A2B61B0064917E /* HomePage.swift in Sources */,
+				6587ADA029A2BE180064917E /* InfoPage.swift in Sources */,
 				6587AD7329A2B61B0064917E /* BAC_on_TrackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

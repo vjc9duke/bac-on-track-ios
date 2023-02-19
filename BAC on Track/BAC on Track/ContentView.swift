@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTabIndex = 1
+    
+    //TODO: add glyphs for each tab
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $selectedTabIndex) {
+            InfoPage()
+                .tabItem() {
+                    Text("Info")
+                }.tag(0)
+            HomePage()
+                .tabItem() {
+                    Text("Home")
+                }.tag(1)
+            SettingsPage()
+                .tabItem() {
+                    Text("Settings")
+                }.tag(2)
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomePage()
     }
 }
