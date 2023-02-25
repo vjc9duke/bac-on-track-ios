@@ -102,9 +102,9 @@
 			children = (
 				6587AD9C29A2BDEA0064917E /* Pages */,
 				6587AD7229A2B61B0064917E /* BAC_on_TrackApp.swift */,
+				6587ADA129A2BEDB0064917E /* ContentView.swift */,
 				6587AD7629A2B61C0064917E /* Assets.xcassets */,
 				6587AD7829A2B61C0064917E /* Preview Content */,
-				6587ADA129A2BEDB0064917E /* ContentView.swift */,
 			);
 			path = "BAC on Track";
 			sourceTree = "<group>";
