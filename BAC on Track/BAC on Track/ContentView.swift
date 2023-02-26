@@ -15,14 +15,17 @@ struct ContentView: View {
         TabView(selection: $selectedTabIndex) {
             InfoPage()
                 .tabItem() {
+                    Image(systemName: "info.circle.fill")
                     Text("Info")
                 }.tag(0)
             HomePage()
                 .tabItem() {
+                    Image(systemName: "house.fill")
                     Text("Home")
                 }.tag(1)
             SettingsPage()
                 .tabItem() {
+                    Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }.tag(2)
         }

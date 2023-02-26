@@ -77,13 +77,14 @@ struct HomePage_Previews: PreviewProvider {
 
 struct CircularProgressBar: View {
     let progress: Double
+    private let roundedCapOffset = 0.01; //rounded cap adds thickness
     
     var body: some View {
         ZStack {
             Circle()
                 .stroke(Color.gray, lineWidth: 20)
             Circle()
-                .trim(from: 0, to: CGFloat(min(progress/0.13, 1.0))) //0.1 is max - probably make it into a constant
+                .trim(from: roundedCapOffset, to: CGFloat(min(progress/0.13, 1.0 + roundedCapOffset))) //0.1 is max - probably make it into a constant
                 .stroke(
                     BACLevelCoordinator.getStateColor(for: progress),
                     style: StrokeStyle(
