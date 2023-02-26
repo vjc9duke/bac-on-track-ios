@@ -69,16 +69,16 @@ struct InfoPage: View {
                 
                 Spacer()
                 Image(systemName: isExpanded && selectedItem == item ? "chevron.up" : "chevron.down")
-                    .onTapGesture {
-                        withAnimation {
-                            if selectedItem == item {
-                                isExpanded.toggle()
-                            } else {
-                                selectedItem = item
-                                isExpanded = true
-                            }
-                        }
+            }
+            .onTapGesture {
+                withAnimation {
+                    if selectedItem == item {
+                        isExpanded.toggle()
+                    } else {
+                        selectedItem = item
+                        isExpanded = true
                     }
+                }
             }
             if isExpanded && selectedItem == item {
                 Text(item.description)
