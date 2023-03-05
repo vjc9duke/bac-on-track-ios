@@ -28,6 +28,11 @@ struct ContentView: View {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }.tag(2)
+            BluetoothView()
+                .tabItem() {
+                    Image(systemName: "heart.fill")
+                    Text("BT Debug")
+                }.tag(3)
         }
     }
 }
