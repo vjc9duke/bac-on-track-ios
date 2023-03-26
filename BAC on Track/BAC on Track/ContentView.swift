@@ -13,10 +13,10 @@ struct ContentView: View {
     //TODO: add glyphs for each tab
     var body: some View {
         TabView(selection: $selectedTabIndex) {
-            InfoPage()
+            HistoryPage()
                 .tabItem() {
-                    Image(systemName: "info.circle.fill")
-                    Text("Info")
+                    Image(systemName: "chart.bar.fill")
+                    Text("History")
                 }.tag(0)
             HomePage()
                 .tabItem() {

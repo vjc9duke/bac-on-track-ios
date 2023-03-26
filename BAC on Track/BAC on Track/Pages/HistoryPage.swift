@@ -18,7 +18,7 @@ struct ListItem: Identifiable, Equatable {
     }
 }
 
-struct InfoPage: View {
+struct HistoryPage: View {
     //TODO: read from file/web server
     let items = [
         ListItem(name: "Wine", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
@@ -108,8 +108,8 @@ struct InfoPage: View {
     }
 }
 
-struct InfoPage_Previews: PreviewProvider {
+struct HistoryPage_Previews: PreviewProvider {
     static var previews: some View {
-        InfoPage()
+        HistoryPage()
     }
 }

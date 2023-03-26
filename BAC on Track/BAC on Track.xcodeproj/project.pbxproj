@@ -18,7 +18,7 @@
 		6587AD8E29A2B61D0064917E /* BAC_on_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD8D29A2B61D0064917E /* BAC_on_TrackUITests.swift */; };
 		6587AD9029A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD8F29A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift */; };
 		6587AD9E29A2BE110064917E /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD9D29A2BE110064917E /* SettingsPage.swift */; };
-		6587ADA029A2BE180064917E /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD9F29A2BE180064917E /* InfoPage.swift */; };
+		6587ADA029A2BE180064917E /* HistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587AD9F29A2BE180064917E /* HistoryPage.swift */; };
 		6587ADA229A2BEDB0064917E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587ADA129A2BEDB0064917E /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 		6587AD8D29A2B61D0064917E /* BAC_on_TrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_on_TrackUITests.swift; sourceTree = "<group>"; };
 		6587AD8F29A2B61D0064917E /* BAC_on_TrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BAC_on_TrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6587AD9D29A2BE110064917E /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
-		6587AD9F29A2BE180064917E /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		6587AD9F29A2BE180064917E /* HistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPage.swift; sourceTree = "<group>"; };
 		6587ADA129A2BEDB0064917E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,7 @@
 				658316C829B52DE2004ED029 /* Bluetooth */,
 				6587AD7429A2B61B0064917E /* HomePage.swift */,
 				6587AD9D29A2BE110064917E /* SettingsPage.swift */,
-				6587AD9F29A2BE180064917E /* InfoPage.swift */,
+				6587AD9F29A2BE180064917E /* HistoryPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 				658316CA29B52E39004ED029 /* BluetoothView.swift in Sources */,
 				6587ADA229A2BEDB0064917E /* ContentView.swift in Sources */,
 				6587AD7529A2B61B0064917E /* HomePage.swift in Sources */,
-				6587ADA029A2BE180064917E /* InfoPage.swift in Sources */,
+				6587ADA029A2BE180064917E /* HistoryPage.swift in Sources */,
 				658316CC29B530C5004ED029 /* BLEController.swift in Sources */,
 				658316C729B52DDE004ED029 /* BluetoothManager.swift in Sources */,
 				6587AD7329A2B61B0064917E /* BAC_on_TrackApp.swift in Sources */,
