@@ -45,6 +45,10 @@ struct HistoryPage: View {
                 }
                 .listRowBackground(Color.gray.opacity(0.2))
             }
+            Button("Debug") {
+                print(HistoryParser.getHistory())
+            }
+            .buttonStyle(.automatic)
         }.padding(.top, UIScreen.main.focusedView?.safeAreaInsets.top)
     }
     

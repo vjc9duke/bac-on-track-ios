@@ -9,7 +9,7 @@ import Foundation
 
 class FileReader {
     
-    static func readJSONFile(fileName: String) -> [String: Any]? {
+    static func readJSONFile(_ fileName: String) -> [String: Any]? {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(fileName)
         do {
             let jsonData = try Data(contentsOf: fileURL!)

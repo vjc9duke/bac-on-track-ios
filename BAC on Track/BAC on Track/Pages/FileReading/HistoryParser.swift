@@ -9,8 +9,52 @@ import Foundation
 
 class HistoryParser {
     
+    private static let historyKey = "history"
+    private static let dateKey = "date"
+    private static let measurementsKey = "measurements"
+    private static let timeKey = "time"
+    private static let bacKey = "bac"
+    
+    private static let historyFile = "history.json"
+    private static let dayFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+    private static let timeFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter
+    }()
+    
     public static func getHistory() -> [History] {
-        return [];
+        guard let history = FileReader.readJSONFile(historyFile) else {
+            print("History file could not be parsed")
+            return [];
+        }
+        guard let rawHistoryList = history[historyKey] as? [[String: Any]] else {
+            print("History list missing")
+            return [];
+        }
+        return rawHistoryList.map { rh in
+            convertAnyToHistory(rh)
+        }
+    }
+    
+    private static func convertAnyToHistory(_ obj: [String: Any]) -> History {
+        return History(
+            day: dayFormatter.date(from: obj[dateKey] as? String ?? "1970-01-01")!,
+            measurements: (obj[measurementsKey] as? [[String: Any]] ?? []).map { o in
+                convertAnyToMeasurement(o)
+            }
+        );
+    }
+    
+    private static func convertAnyToMeasurement(_ obj: [String: Any]) -> BACMeasurement {
+        return BACMeasurement(
+            time: timeFormatter.date(from: obj[timeKey] as? String ?? "00:00")!,
+            bac: obj[bacKey] as? Double ?? 0.0
+        );
     }
 }
 
