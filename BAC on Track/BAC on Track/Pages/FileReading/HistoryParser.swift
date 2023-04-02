@@ -58,6 +58,7 @@ class HistoryParser {
     
     private static func convertAnyToMeasurement(_ obj: [String: Any]) -> BACMeasurement {
         return BACMeasurement(
+            id: obj[timeKey] as? String ?? "00:00",
             time: timeFormatter.date(from: obj[timeKey] as? String ?? "00:00")!,
             bac: obj[bacKey] as? Double ?? 0.0
         );
@@ -74,7 +75,8 @@ struct History : Identifiable, Equatable {
     }
 }
 
-struct BACMeasurement {
+struct BACMeasurement : Identifiable {
+    let id: String;
     let time: Date
     let bac: Double
 }

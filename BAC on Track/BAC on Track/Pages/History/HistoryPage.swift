@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct HistoryPage: View {
     let items = HistoryParser.getHistory();
@@ -14,19 +15,12 @@ struct HistoryPage: View {
     
     var body: some View {
         VStack {
-//            SearchBar(text: $searchText)
             List {
-//                ForEach(items.filter { searchText.isEmpty || DateFormatter.localizedString(from: $0.day, dateStyle: .short, timeStyle: .medium).localizedCaseInsensitiveContains(searchText) }) { item in
-                
-//                }
                 ForEach(items) { item in
                     ListItemView(item: item)
                 }
                 .listRowBackground(Color.gray.opacity(0.2))
             }
-//            Button("Debug") {
-//                print(HistoryParser.getHistory())
-//            }
             .buttonStyle(.automatic)
         }.padding(.top, UIScreen.main.focusedView?.safeAreaInsets.top)
     }
@@ -58,29 +52,17 @@ struct HistoryPage: View {
                 }
             }
             if isExpanded && selectedItem == item {
-                Text("TEMP")
+                GroupBox ( "BAC") {
+                    Chart(item.measurements) {
+                        LineMark(
+                            x: .value("Time", $0.id),
+                            y: .value("BAC", $0.bac)
+                        )
+                        
+                    }
+                }
                 .padding()
             }
-        }
-    }
-
-    struct SearchBar: View {
-        @Binding var text: String
-        
-        var body: some View {
-            HStack {
-                TextField("Search", text: $text)
-                    .padding(.horizontal)
-                    .frame(height: 44)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .padding()
-                
-                Image(systemName: "magnifyingglass")
-                    .padding(.trailing)
-            }
-            .background(Color(.systemGray6))
-            .edgesIgnoringSafeArea(.top)
         }
     }
 }
