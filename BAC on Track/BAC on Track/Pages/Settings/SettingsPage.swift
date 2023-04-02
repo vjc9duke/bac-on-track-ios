@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct SettingsPage: View {
-    @State private var name = ""
-    @State private var weight = ""
-    @State private var age = ""
-    @State private var gender = "Male"
+    @State private var profileInfo = ProfileInfo.empty()
     @State private var togglePlaceholder1 = false
     @State private var togglePlaceholder2 = false
     @State private var togglePlaceholder3 = false
@@ -27,26 +24,26 @@ struct SettingsPage: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Name")
                         .font(.headline)
-                    TextField("Enter your name", text: $name)
+                    TextField("Enter your name", text: $profileInfo.name)
                         .submitLabel(.done)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Text("Weight")
                         .font(.headline)
-                    TextField("Enter your weight", text: $weight)
+                    TextField("Enter your weight", text: $profileInfo.weight)
                         .submitLabel(.done)
                         .keyboardType(.numberPad)
                         .textFieldStyle(.roundedBorder)
                     
                     Text("Age")
                         .font(.headline)
-                    TextField("Enter your age", text: $age)
+                    TextField("Enter your age", text: $profileInfo.age)
                         .submitLabel(.done)
                         .keyboardType(.numberPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Text("Gender")
                         .font(.headline)
-                    Picker(selection: $gender, label: Text("Gender")) {
+                    Picker(selection: $profileInfo.gender, label: Text("Gender")) {
                         ForEach(genderOptions, id: \.self) {
                             Text($0)
                         }
@@ -54,7 +51,7 @@ struct SettingsPage: View {
                     .pickerStyle(MenuPickerStyle())
                     Button("Save") {
                         ProfileRetreiver.writeProfileInfo(
-                            ProfileInfo(name: name, weight: weight, age: age, gender: gender)
+                            profileInfo
                         )
                     }
                 }
@@ -74,7 +71,11 @@ struct SettingsPage: View {
                 Spacer()
             }
             .padding()
-        }.padding(.top, UIScreen.main.focusedView?.safeAreaInsets.top)
+        }
+        .padding(.top, UIScreen.main.focusedView?.safeAreaInsets.top)
+        .onAppear{
+            profileInfo = ProfileRetreiver.getProfileInfo()
+        }
     }
 }
 

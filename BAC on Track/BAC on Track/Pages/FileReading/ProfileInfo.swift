@@ -34,10 +34,10 @@ class ProfileRetreiver {
 }
 
 struct ProfileInfo {
-    let name: String
-    let weight: String
-    let age: String
-    let gender: String
+    var name: String
+    var weight: String
+    var age: String
+    var gender: String
     
     public static func empty() -> ProfileInfo {
         return ProfileInfo(name: "", weight: "", age: "", gender: "");
