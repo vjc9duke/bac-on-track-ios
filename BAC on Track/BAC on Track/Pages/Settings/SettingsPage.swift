@@ -30,7 +30,6 @@ struct SettingsPage: View {
                     TextField("Enter your name", text: $name)
                         .submitLabel(.done)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
                     Text("Weight")
                         .font(.headline)
                     TextField("Enter your weight", text: $weight)
@@ -47,14 +46,17 @@ struct SettingsPage: View {
                     
                     Text("Gender")
                         .font(.headline)
-                    
                     Picker(selection: $gender, label: Text("Gender")) {
                         ForEach(genderOptions, id: \.self) {
                             Text($0)
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
-                        
+                    Button("Save") {
+                        ProfileRetreiver.writeProfileInfo(
+                            ProfileInfo(name: name, weight: weight, age: age, gender: gender)
+                        )
+                    }
                 }
                 
                 Divider()
