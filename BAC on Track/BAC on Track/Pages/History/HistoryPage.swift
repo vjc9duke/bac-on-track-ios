@@ -58,7 +58,10 @@ struct HistoryPage: View {
                             x: .value("Time", $0.id),
                             y: .value("BAC", $0.bac)
                         )
-                        
+                        PointMark(
+                            x: .value("Time", $0.id),
+                            y: .value("BAC", $0.bac)
+                        )
                     }
                 }
                 .padding()
