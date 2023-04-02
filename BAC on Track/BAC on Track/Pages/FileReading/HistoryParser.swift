@@ -42,8 +42,14 @@ class HistoryParser {
     }
     
     private static func convertAnyToHistory(_ obj: [String: Any]) -> History {
+        let date = dayFormatter.date(from: obj[dateKey] as? String ?? "1970-01-01")!;
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let dateString = dateFormatter.string(from: date)
+        
         return History(
-            day: dayFormatter.date(from: obj[dateKey] as? String ?? "1970-01-01")!,
+            id: dateString,
+            day: date,
             measurements: (obj[measurementsKey] as? [[String: Any]] ?? []).map { o in
                 convertAnyToMeasurement(o)
             }
@@ -58,9 +64,14 @@ class HistoryParser {
     }
 }
 
-struct History {
+struct History : Identifiable, Equatable {
+    let id: String
     let day: Date
     let measurements: [BACMeasurement]
+    
+    static func == (lhs: History, rhs: History) -> Bool {
+        return lhs.id == rhs.id;
+    }
 }
 
 struct BACMeasurement {

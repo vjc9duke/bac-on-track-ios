@@ -7,67 +7,40 @@
 
 import SwiftUI
 
-struct ListItem: Identifiable, Equatable {
-    let id = UUID()
-    let name: String
-    let thumbnail: String
-    let description: String
-    
-    static func ==(lhs: ListItem, rhs: ListItem) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 struct HistoryPage: View {
-    //TODO: read from file/web server
-    let items = [
-        ListItem(name: "Wine", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Water", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Beer", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Alcochol", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 5", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 6", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 7", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 8", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 9", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 10", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-        ListItem(name: "Item 11", thumbnail: "wineglass", description: "[INSERT NUTRITION DATA]"),
-    ]
+    let items = HistoryParser.getHistory();
         
     @State private var searchText = ""
     
     var body: some View {
         VStack {
-            SearchBar(text: $searchText)
+//            SearchBar(text: $searchText)
             List {
-                ForEach(items.filter { searchText.isEmpty || $0.name.localizedCaseInsensitiveContains(searchText) }) { item in
+//                ForEach(items.filter { searchText.isEmpty || DateFormatter.localizedString(from: $0.day, dateStyle: .short, timeStyle: .medium).localizedCaseInsensitiveContains(searchText) }) { item in
+                
+//                }
+                ForEach(items) { item in
                     ListItemView(item: item)
                 }
                 .listRowBackground(Color.gray.opacity(0.2))
             }
-            Button("Debug") {
-                print(HistoryParser.getHistory())
-            }
+//            Button("Debug") {
+//                print(HistoryParser.getHistory())
+//            }
             .buttonStyle(.automatic)
         }.padding(.top, UIScreen.main.focusedView?.safeAreaInsets.top)
     }
     
     struct ListItemView: View {
-        let item: ListItem
+        let item: History
         
         @State private var showDetails = false
         @State private var isExpanded = false
-        @State private var selectedItem: ListItem?
+        @State private var selectedItem: History?
         
         var body: some View {
             HStack {
-                Image(systemName: item.thumbnail)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 44, height: 44)
-                    .padding()
-                
-                Text(item.name)
+                Text(item.id)
                     .font(.headline)
                     .padding(.trailing)
                 
@@ -85,7 +58,7 @@ struct HistoryPage: View {
                 }
             }
             if isExpanded && selectedItem == item {
-                Text(item.description)
+                Text("TEMP")
                 .padding()
             }
         }
