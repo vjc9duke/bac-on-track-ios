@@ -14,7 +14,7 @@ class BLEController: NSObject, ObservableObject, CBCentralManagerDelegate, CBPer
     @Published var bac: Float = 0
     
     var myCentral: CBCentralManager!
-    let bacTrackerUUID = CBUUID(string: "0x180D") //TODO: find UUID for sensor
+    let bacTrackerUUID = CBUUID(string: "2A56") //TODO: find UUID for sensor
     
     override init() {
         super.init()

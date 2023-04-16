@@ -62,6 +62,7 @@
 		6587ADA129A2BEDB0064917E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		659E0FE829DA0D2500594792 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		659E0FEA29DA0D3E00594792 /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		65C30E1F29EC7CA7005B7C62 /* BAC-on-Track-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BAC-on-Track-Info.plist"; sourceTree = SOURCE_ROOT; };
 		65D3942F29D0D48800788599 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		65D3943129D0D4F700788599 /* HistoryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +125,7 @@
 		6587AD7129A2B61B0064917E /* BAC on Track */ = {
 			isa = PBXGroup;
 			children = (
+				65C30E1F29EC7CA7005B7C62 /* BAC-on-Track-Info.plist */,
 				6587AD9C29A2BDEA0064917E /* Pages */,
 				6587AD7229A2B61B0064917E /* BAC_on_TrackApp.swift */,
 				6587ADA129A2BEDB0064917E /* ContentView.swift */,
@@ -500,6 +502,8 @@
 				DEVELOPMENT_TEAM = DURNN77378;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BAC-on-Track-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "For device connection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -529,6 +533,8 @@
 				DEVELOPMENT_TEAM = DURNN77378;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BAC-on-Track-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "For device connection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

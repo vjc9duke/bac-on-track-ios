@@ -40,6 +40,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print("Peripheral name: \(peripheral.name)")
         if peripheral.name == "MQ3" {
             connect(peripheral: peripheral)
         }
