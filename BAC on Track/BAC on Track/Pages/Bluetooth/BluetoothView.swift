@@ -33,7 +33,8 @@ extension BluetoothViewModel: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if((peripheral.name ?? "") == "Arduino") {
+        if((peripheral.name ?? "") == "Arduino" ||
+           (peripheral.name ?? "") == "Nano33BLE") {
             self.peripherals.append(peripheral)
             self.peripheralNames.append(peripheral.name!)
             centralManager?.connect(peripheral, options: nil)
@@ -88,6 +89,26 @@ extension BluetoothViewModel: CBCentralManagerDelegate {
         // Process the data read from the characteristic
         let data = characteristic.value
         print("Data from device: \(data!)")
+    }
+    
+    func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
+        print("Func 4")
+    }
+    
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        print("Func 5")
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("Func 6")
+    }
+    
+    func centralManager(_ central: CBCentralManager, didUpdateANCSAuthorizationFor peripheral: CBPeripheral) {
+        print("Func 7")
+    }
+    
+    func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
+        print("Func 8")
     }
 }
 
